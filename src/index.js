@@ -29,6 +29,7 @@ class PDFViewer extends React.Component {
 
   onDocumentComplete = (pages) => {
     this.setState({
+      page: 1,
       pages
     });
   }
@@ -78,20 +79,20 @@ class PDFViewer extends React.Component {
     );
 
     let nav = null;
-    if (pages > 0){
-      nav = !navigation || (navigation && typeof(navigation) === 'object')
+    if (pages > 0) {
+      nav = !navigation || (navigation && typeof (navigation) === 'object')
         ? <Navigation
-            page={page}
-            pages={pages}
-            css={navigation ? navigation.css : undefined}
-            elements={navigation ? navigation.elements : undefined}
-            handleNextClick={this.handleNextClick}
-            handlePrevClick={this.handlePrevClick} />
+          page={page}
+          pages={pages}
+          css={navigation ? navigation.css : undefined}
+          elements={navigation ? navigation.elements : undefined}
+          handleNextClick={this.handleNextClick}
+          handlePrevClick={this.handlePrevClick} />
         : <NavigationElement
-            page={page}
-            pages={pages}
-            handleNextClick={this.handleNextClick}
-            handlePrevClick={this.handlePrevClick} />;
+          page={page}
+          pages={pages}
+          handleNextClick={this.handleNextClick}
+          handlePrevClick={this.handlePrevClick} />;
     }
 
     return (
