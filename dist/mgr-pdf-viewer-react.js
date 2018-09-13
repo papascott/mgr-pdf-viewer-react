@@ -312,6 +312,7 @@ Navigation.defaultProps = {
 };
 
 var mgrpdfStyles = {};
+
 mgrpdfStyles.wrapper = {
   textAlign: 'center'
 };
@@ -335,6 +336,7 @@ var PDFViewer = function (_React$Component) {
       page: 1
     }, _this.onDocumentComplete = function (pages) {
       _this.setState({
+        page: 1,
         pages: pages
       });
     }, _this.handlePrevClick = function () {
